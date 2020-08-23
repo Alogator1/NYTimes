@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-        <Route path="/article/:id" component={ArticlePage}/>  
+        <Route path="/article" component={ArticlePage}/>  
         <Route exact path="/" component={ArticleList}/>
         </Switch>
       </div>

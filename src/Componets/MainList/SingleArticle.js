@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SingleArticle.css";
+import { NavLink } from "react-router-dom";
 
 class Article extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Article extends Component {
       } = this.props;
     return (
       <div className="arcticle_single" onClick={this.findArticle.bind(this)}>
-        <a href={`article/${id}`} className="article_ref"><h2>{title}</h2></a>
+        <NavLink to={`article/${id}`} className="article_ref"><h2>{title}</h2></NavLink>
       </div>
     );
   }

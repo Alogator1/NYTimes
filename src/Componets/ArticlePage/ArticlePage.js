@@ -3,19 +3,17 @@ import {connect} from "react-redux";
 import Header from '../Header/Header';
 
 const ArticlePage = (props) => {
+    
+    console.log(props.article);
 
     return ( <div>
         <Header/>
+        {props.article[0].title}
     </div> );
 }
  
 export default connect(
   state=>({
-    articles: state.articles
-  }),
-  dispatch => ({
-    onOpenPage:(id) => {
-        dispatch({type:"OPEN_ARTICLE_PAGE", payload: id});
-    }
+    article: state.articles.filter(article=>article._id.includes(window.location.href.substr(window.location.href.indexOf('/article/')+9)))
   })
   )(ArticlePage);
