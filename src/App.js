@@ -8,6 +8,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import SignIn from "./Componets/SignIn/SignIn";
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
         <Switch>
         <Route path="/article" component={ArticlePage}/>  
         <Route exact path="/" component={ArticleList}/>
+        <Route exact path="/login" component={SignIn}/>
         </Switch>
       </div>
     );
