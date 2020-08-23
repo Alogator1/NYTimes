@@ -1,0 +1,12 @@
+.articlePage_main{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    flex-direction: column;
+
+}
+
+.articlePage_header{
+    font-family: 'El Messiri', sans-serif;
+}

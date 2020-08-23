@@ -15,7 +15,7 @@ class ArticleList extends Component {
           <Button onClick={this.props.onGetArticles} variant="contained" className="articleList_button">Load articles</Button>
         </div>
         <div className="articleList_list">
-        {this.props.articles.slice(0,50).map((article,index)=>
+        {this.props.articles.map((article,index)=>
             <Article id={article._id} title={article.title} key={index} />
         )}
         </div>
@@ -28,13 +28,6 @@ export default connect(
     articles: state.articles
   }),
   dispatch => ({
-    addArticle: (articleName) =>{
-      const payload ={
-        _id: Date.now().toString(),
-        articleName: articleName
-      }
-      dispatch({type: "ADD_ARTICLE", payload})
-    },
     onGetArticles: ()=>{
       dispatch(getArticles());
     }

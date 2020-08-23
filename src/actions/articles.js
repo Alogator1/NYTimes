@@ -1,20 +1,21 @@
 let articles = [];
 const API_KEY = "sigarPXFXauqfNcEAhXENrA8rFe0l5nG";
-  const url = "https://api.nytimes.com/svc/archive/v1/2019/1.json";
-fetch(url + "?api-key=" + API_KEY, {
+  const url = "https://api.nytimes.com/svc/news/v3/content/all/all.json";
+fetch(url + "?limit=100&api-key=" + API_KEY, {
   method: "GET",
   withCredentials: true
 })
   .then(resp => resp.json())
   .then(function(data) {
-    data.response.docs.map((article, index)=>{
+    data.results.map((article, index)=>{
       articles.push({
-        title: article.abstract,
-        _id: article._id,
-        lead_paragraph: article.lead_paragraph,
+        title: article.title,
+        _id: article.slug_name,
+        lead_paragraph: article.abstract,
         source: article.source
       })
     })
+    console.log(articles);
   })
   .catch(function(error) {
     console.log(error);
@@ -22,7 +23,6 @@ fetch(url + "?api-key=" + API_KEY, {
 
 export const getArticles = () => (dispatch) => {
   setTimeout(() => {
-    console.log(articles);
     dispatch({ type: "FETCH_ARTICLES_SUCCESS", payload: articles});
   }, 0);
 };

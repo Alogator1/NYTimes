@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import ArticleList from "./Componets/MainList/ArticleList";
-import Header from "./Componets/Header/Header";
 import ArticlePage from "./Componets/ArticlePage/ArticlePage";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import SignIn from "./Componets/SignIn/SignIn";
 
 
