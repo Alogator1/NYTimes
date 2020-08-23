@@ -12,7 +12,7 @@ const Header = () => {
       <h1>
         NY Times
       </h1>
-      <Button variant="contained" color="secondary">Login</Button>
+      <Button variant="contained" color="secondary" href="/login">Login</Button>
     </Toolbar>
   </AppBar> );
 }

@@ -10,7 +10,9 @@ fetch(url + "?api-key=" + API_KEY, {
     data.response.docs.map((article, index)=>{
       articles.push({
         title: article.abstract,
-        _id: article._id
+        _id: article._id,
+        lead_paragraph: article.lead_paragraph,
+        source: article.source
       })
     })
   })

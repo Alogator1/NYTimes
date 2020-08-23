@@ -10,15 +10,30 @@ import * as serviceWorker from './serviceWorker';
 
 import App from './App';
 import reducer from "./reducers/index"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import SignIn from './Componets/SignIn/SignIn';
 
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 
 ReactDOM.render(
+  <Router>
   <Provider store={store}>
+    <Switch>
+      <Route path="/" exact>
     <App />
-  </Provider>,
+    </Route>
+    <Route path="/login" exact>
+    <SignIn />
+    </Route>
+    </Switch>
+  </Provider>
+  </Router>,
   document.getElementById('root')
 );
 

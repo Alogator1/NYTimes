@@ -1,26 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-import ArticleList from './Componets/MainList/ArticleList';
-import Header from './Componets/Header';
-
-
-
-
+import React, { Component } from "react";
+import "./App.css";
+import ArticleList from "./Componets/MainList/ArticleList";
+import Header from "./Componets/Header/Header";
 
 class App extends Component {
-
-  render() { 
-    return ( 
+  render() {
+    return (
       <div>
-        <Header/>
-        <ArticleList/>
-        {/* <ul>
-          {this.props.articles.slice(0,50).map((article,index)=>
-          <li key={index}>{article.title}</li>
-          )}
-        </ul> */}
+        <Header />
+        <ArticleList />
       </div>
-     );
+    );
   }
 }
 
