@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./SinglArticle.css";
+import "./SingleArticle.css";
 
 class Article extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Article extends Component {
   }
 
   findArticle() {
-      console.log(this.props.id);
+      
   }
 
   render() {
@@ -18,7 +18,7 @@ class Article extends Component {
       } = this.props;
     return (
       <div className="arcticle_single" onClick={this.findArticle.bind(this)}>
-        <h2>{title}</h2>
+        <a href={`article/${id}`} className="article_ref"><h2>{title}</h2></a>
       </div>
     );
   }

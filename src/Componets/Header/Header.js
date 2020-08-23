@@ -10,7 +10,7 @@ const Header = () => {
     return ( <AppBar position="sticky" className="header_appBar">
     <Toolbar className="header_toolbar">
       <h1>
-        NY Times
+        <a href="/" className="header_href">NY Times</a>
       </h1>
       <Button variant="contained" color="secondary" href="/login">Login</Button>
     </Toolbar>
