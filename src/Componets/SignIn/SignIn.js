@@ -72,6 +72,19 @@ function SignIn(props) {
       });
   }
 
+  function signup(e) {
+    e.preventDefault();
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((u) => {
+        setErrMsg("");
+      })
+      .catch((error) => {
+        setErrMsg(error.message);
+      });
+  }
+
   useEffect(() => {
     authListener();
   }, []);
@@ -123,14 +136,16 @@ function SignIn(props) {
           >
             Sign In
           </Button>
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={signup}
+          >
+            Sign Up
+          </Button>
           <span>{errMsg}</span>
-          <Grid container>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
     </Container>
