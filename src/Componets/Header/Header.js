@@ -7,16 +7,6 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Header = (props) => {
-
-  console.log(props.user);
-  if(!props.user.isLogged)
-  console.log("i am not logged");
-  else{
-    console.log("i am logged");
-  }
-
-
-
   return (
     <AppBar position="sticky" className="header_appBar">
       <Toolbar className="header_toolbar">
@@ -25,13 +15,13 @@ const Header = (props) => {
             NY Times
           </NavLink>
         </h1>
-        <NavLink to={!props.user.isLogged?"/login":"/logout"}>
+        <NavLink to={!props.user.isLogged ? "/login" : "/logout"}>
           <Button
             variant="contained"
             color="secondary"
             className="header_loginButton"
           >
-            {!props.user.isLogged?"Login/Register":"Sign out"}
+            {!props.user.isLogged ? "Login/Register" : "Sign out"}
           </Button>
         </NavLink>
       </Toolbar>

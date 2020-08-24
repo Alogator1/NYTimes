@@ -7,10 +7,8 @@ import SignIn from "./Componets/SignIn/SignIn";
 import SignOut from "./Componets/SignIn/SignOut";
 import { connect } from "react-redux";
 
-
 class App extends Component {
   render() {
-    console.log("props:", this.props);
     return (
       <div>
         <Switch>

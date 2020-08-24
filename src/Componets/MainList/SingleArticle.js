@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import "./SingleArticle.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { Dialog } from "@material-ui/core";
 
 class Article extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
     };
   }
 
-  handleClick(){
+  handleClick() {
     alert("You need to login to view articles!");
   }
 

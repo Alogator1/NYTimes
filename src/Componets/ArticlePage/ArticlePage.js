@@ -6,12 +6,10 @@ import { Redirect } from "react-router";
 
 const ArticlePage = (props) => {
   console.log(props.article);
-  try{
-      if(!props.article[0])
-      throw "Error"
-  }  
-  catch(e){
-    return <Redirect to='/' />
+  try {
+    if (!props.article[0]) throw "Error";
+  } catch (e) {
+    return <Redirect to="/" />;
   }
   return (
     <div>
