@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://nytimes-29c49.web.app
 
 ## Available Scripts
 
